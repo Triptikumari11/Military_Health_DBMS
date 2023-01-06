@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 16, 2020 at 02:34 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Jan 06, 2023 at 02:16 PM
+-- Server version: 8.0.31
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -47,19 +46,19 @@ INSERT INTO `admintb` (`username`, `password`) VALUES
 --
 
 CREATE TABLE `appointmenttb` (
-  `pid` int(11) NOT NULL,
-  `ID` int(11) NOT NULL,
+  `pid` int NOT NULL,
+  `ID` int NOT NULL,
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `email` varchar(30) NOT NULL,
   `contact` varchar(10) NOT NULL,
   `doctor` varchar(30) NOT NULL,
-  `docFees` int(5) NOT NULL,
+  `docFees` int NOT NULL,
   `appdate` date NOT NULL,
   `apptime` time NOT NULL,
-  `userStatus` int(5) NOT NULL,
-  `doctorStatus` int(5) NOT NULL
+  `userStatus` int NOT NULL,
+  `doctorStatus` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -78,7 +77,8 @@ INSERT INTO `appointmenttb` (`pid`, `ID`, `fname`, `lname`, `gender`, `email`, `
 (4, 10, 'Kishan', 'Lal', 'Male', 'kishansmart0@gmail.com', '8838489464', 'Ganesh', 550, '0000-00-00', '14:00:00', 1, 0),
 (4, 11, 'Kishan', 'Lal', 'Male', 'kishansmart0@gmail.com', '8838489464', 'Dinesh', 700, '2020-03-27', '15:00:00', 1, 1),
 (9, 12, 'William', 'Blake', 'Male', 'william@gmail.com', '8683619153', 'Kumar', 800, '2020-03-26', '12:00:00', 1, 1),
-(9, 13, 'William', 'Blake', 'Male', 'william@gmail.com', '8683619153', 'Tiwary', 450, '2020-03-26', '14:00:00', 1, 1);
+(9, 13, 'William', 'Blake', 'Male', 'william@gmail.com', '8683619153', 'Tiwary', 450, '2020-03-26', '14:00:00', 1, 1),
+(12, 14, 'tripti', 'kumari', 'Female', 'tp@gmail.com', '1234567890', 'yuki', 10000, '2023-01-07', '08:00:00', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,8 @@ INSERT INTO `contact` (`name`, `email`, `contact`, `message`) VALUES
 ('Karthick', 'karthi@gmail.com', '9898989898', 'Good service'),
 ('Abbis', 'abbis@gmail.com', '8979776868', 'Love your service'),
 ('Asiq', 'asiq@gmail.com', '9087897564', 'Love your service. Thank you!'),
-('Jane', 'jane@gmail.com', '7869869757', 'I love your service!');
+('Jane', 'jane@gmail.com', '7869869757', 'I love your service!'),
+('Tp', 'sdgsdftvgsd@gdd.com', '0644550460', 'Good Doctors specially yuki will come again tomorow');
 
 -- --------------------------------------------------------
 
@@ -119,7 +120,7 @@ CREATE TABLE `doctb` (
   `password` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `spec` varchar(50) NOT NULL,
-  `docFees` int(10) NOT NULL
+  `docFees` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -134,7 +135,8 @@ INSERT INTO `doctb` (`username`, `password`, `email`, `spec`, `docFees`) VALUES
 ('Kumar', 'kumar123', 'kumar@gmail.com', 'Pediatrician', 800),
 ('Amit', 'amit123', 'amit@gmail.com', 'Cardiologist', 1000),
 ('Abbis', 'abbis123', 'abbis@gmail.com', 'Neurologist', 1500),
-('Tiwary', 'tiwary123', 'tiwary@gmail.com', 'Pediatrician', 450);
+('Tiwary', 'tiwary123', 'tiwary@gmail.com', 'Pediatrician', 450),
+('yuki', 'yuki123', 'blabla@gmail.com', 'General', 10000);
 
 -- --------------------------------------------------------
 
@@ -143,32 +145,25 @@ INSERT INTO `doctb` (`username`, `password`, `email`, `spec`, `docFees`) VALUES
 --
 
 CREATE TABLE `patreg` (
-  `pid` int(11) NOT NULL,
+  `pid` int NOT NULL,
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `email` varchar(30) NOT NULL,
   `contact` varchar(10) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `cpassword` varchar(30) NOT NULL
+  `cpassword` varchar(30) NOT NULL,
+  `srank` varchar(25) NOT NULL DEFAULT 'NA',
+  `sdept` varchar(25) NOT NULL DEFAULT 'NA'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patreg`
 --
 
-INSERT INTO `patreg` (`pid`, `fname`, `lname`, `gender`, `email`, `contact`, `password`, `cpassword`) VALUES
-(1, 'Ram', 'Kumar', 'Male', 'ram@gmail.com', '9876543210', 'ram123', 'ram123'),
-(2, 'Alia', 'Bhatt', 'Female', 'alia@gmail.com', '8976897689', 'alia123', 'alia123'),
-(3, 'Shahrukh', 'khan', 'Male', 'shahrukh@gmail.com', '8976898463', 'shahrukh123', 'shahrukh123'),
-(4, 'Kishan', 'Lal', 'Male', 'kishansmart0@gmail.com', '8838489464', 'kishan123', 'kishan123'),
-(5, 'Gautam', 'Shankararam', 'Male', 'gautam@gmail.com', '9070897653', 'gautam123', 'gautam123'),
-(6, 'Sushant', 'Singh', 'Male', 'sushant@gmail.com', '9059986865', 'sushant123', 'sushant123'),
-(7, 'Nancy', 'Deborah', 'Female', 'nancy@gmail.com', '9128972454', 'nancy123', 'nancy123'),
-(8, 'Kenny', 'Sebastian', 'Male', 'kenny@gmail.com', '9809879868', 'kenny123', 'kenny123'),
-(9, 'William', 'Blake', 'Male', 'william@gmail.com', '8683619153', 'william123', 'william123'),
-(10, 'Peter', 'Norvig', 'Male', 'peter@gmail.com', '9609362815', 'peter123', 'peter123'),
-(11, 'Shraddha', 'Kapoor', 'Female', 'shraddha@gmail.com', '9768946252', 'shraddha123', 'shraddha123');
+INSERT INTO `patreg` (`pid`, `fname`, `lname`, `gender`, `email`, `contact`, `password`, `cpassword`, `srank`, `sdept`) VALUES
+(16, 'Yuki', '', 'Male', 'yuki111@gmail.com', '1111111111', 'yuki123', 'yuki123', 'Trainee', 'Army'),
+(17, 'Tripti', 'Kumari', 'Female', 'tp@gmail.com', 'tp@gmail.c', 'tripti123', 'tripti123', 'General', 'Army');
 
 -- --------------------------------------------------------
 
@@ -178,8 +173,8 @@ INSERT INTO `patreg` (`pid`, `fname`, `lname`, `gender`, `email`, `contact`, `pa
 
 CREATE TABLE `prestb` (
   `doctor` varchar(50) NOT NULL,
-  `pid` int(11) NOT NULL,
-  `ID` int(11) NOT NULL,
+  `pid` int NOT NULL,
+  `ID` int NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `appdate` date NOT NULL,
@@ -197,7 +192,8 @@ INSERT INTO `prestb` (`doctor`, `pid`, `ID`, `fname`, `lname`, `appdate`, `appti
 ('Dinesh', 4, 11, 'Kishan', 'Lal', '2020-03-27', '15:00:00', 'Cough', 'Nothing', 'Just take a teaspoon of Benadryl every night'),
 ('Ganesh', 2, 8, 'Alia', 'Bhatt', '2020-03-21', '10:00:00', 'Severe Fever', 'Nothing', 'Take bed rest'),
 ('Kumar', 9, 12, 'William', 'Blake', '2020-03-26', '12:00:00', 'Sever fever', 'nothing', 'Paracetamol -> 1 every morning and night'),
-('Tiwary', 9, 13, 'William', 'Blake', '2020-03-26', '14:00:00', 'Cough', 'Skin dryness', 'Intake fruits with more water content');
+('Tiwary', 9, 13, 'William', 'Blake', '2020-03-26', '14:00:00', 'Cough', 'Skin dryness', 'Intake fruits with more water content'),
+('yuki', 12, 14, 'tripti', 'kumari', '2023-01-07', '08:00:00', 'Too Cute', 'Me', 'PGL, Sleep eat');
 
 --
 -- Indexes for dumped tables
@@ -223,13 +219,13 @@ ALTER TABLE `patreg`
 -- AUTO_INCREMENT for table `appointmenttb`
 --
 ALTER TABLE `appointmenttb`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `patreg`
 --
 ALTER TABLE `patreg`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `pid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
