@@ -9,8 +9,10 @@ if(isset($_POST['patsub1'])){
   $contact=$_POST['contact'];
 	$password=$_POST['password'];
   $cpassword=$_POST['cpassword'];
+  $srank=$_POST['srank'];
+  $sdept=$_POST['sdept'];
   if($password==$cpassword){
-  	$query="insert into patreg(fname,lname,gender,email,contact,password,cpassword) values ('$fname','$lname','$gender','$email','$contact','$password','$cpassword');";
+  	$query="insert into patreg(fname,lname,gender,email,contact,password,cpassword,srank,sdept) values ('$fname','$lname','$gender','$email','$contact','$password','$cpassword','$srank','$sdept');";
     $result=mysqli_query($con,$query);
     if($result){
         $_SESSION['username'] = $_POST['fname']." ".$_POST['lname'];
@@ -19,6 +21,8 @@ if(isset($_POST['patsub1'])){
         $_SESSION['gender'] = $_POST['gender'];
         $_SESSION['contact'] = $_POST['contact'];
         $_SESSION['email'] = $_POST['email'];
+        $_SESSION['srank'] = $_POST['srank'];
+        $_SESSION['sdept'] = $_POST['sdept'];
         header("Location:admin-panel.php");
     } 
 

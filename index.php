@@ -116,12 +116,14 @@ function checklen()
                                             <input type="text" class="form-control"  placeholder="First Name *" name="fname"  onkeydown="return alphaOnly(event);" required/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" name="email"  />
+                                            <input type="email" class="form-control" placeholder="Your Email " name="email"  />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" id="password" name="password" onkeyup='check();' required/>
+                                            <input type="text" class="form-control" placeholder="Your Current Rank " name="srank"  />
                                         </div>
                                         
+                                        
+                                       
                                         <div class="form-group">
                                             <div class="maxl">
                                                 <label class="radio inline"> 
@@ -133,6 +135,15 @@ function checklen()
                                                     <span>Female </span> 
                                                 </label>
                                             </div>
+                                            <div class="form-group">
+                                            <label for="cars">Your Departmemt:</label>
+                                            <select id="cars" name="sdept">
+                                                <option value="Army">Army</option>
+                                                <option value="Navy">Navy</option>
+                                                <option value="Airforce">Airforce</option>
+                                                
+                                            </select>
+                                            </div>
                                             <a href="index1.php">Already have an account?</a>
                                         </div>
                                     </div>
@@ -143,7 +154,10 @@ function checklen()
                                         </div>
                                         
                                         <div class="form-group">
-                                            <input type="tel" minlength="10" maxlength="10" name="contact" class="form-control" placeholder="Your Phone *"  />
+                                            <input type="tel" minlength="10" maxlength="10" name="contact" class="form-control" placeholder="Your Phone "  />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" id="password" name="password" onkeyup='check();' required/>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control"  id="cpassword" placeholder="Confirm Password *" name="cpassword"  onkeyup='check();' required/><span id='message'></span>
