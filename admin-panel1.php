@@ -319,6 +319,8 @@ if(isset($_POST['docsub1']))
                     <th scope="col">Email</th>
                     <th scope="col">Contact</th>
                     <th scope="col">Rank</th>
+                    <th scope="col">Department</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -334,7 +336,10 @@ if(isset($_POST['docsub1']))
                       $gender = $row['gender'];
                       $email = $row['email'];
                       $contact = $row['contact'];
-                      $password = $row['password'];
+                      $srank = $row['srank'];
+                      $sdept = $row['sdept'];
+
+
                       
                       echo "<tr>
                         <td>$pid</td>
@@ -343,7 +348,8 @@ if(isset($_POST['docsub1']))
                         <td>$gender</td>
                         <td>$email</td>
                         <td>$contact</td>
-                        <td>$password</td>
+                        <td>$srank</td>
+                        <td>$sdept</td>
                       </tr>";
                     }
 
