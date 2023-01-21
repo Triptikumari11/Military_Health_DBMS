@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2023 at 02:16 PM
+-- Generation Time: Jan 21, 2023 at 07:48 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.25
 
@@ -77,8 +77,7 @@ INSERT INTO `appointmenttb` (`pid`, `ID`, `fname`, `lname`, `gender`, `email`, `
 (4, 10, 'Kishan', 'Lal', 'Male', 'kishansmart0@gmail.com', '8838489464', 'Ganesh', 550, '0000-00-00', '14:00:00', 1, 0),
 (4, 11, 'Kishan', 'Lal', 'Male', 'kishansmart0@gmail.com', '8838489464', 'Dinesh', 700, '2020-03-27', '15:00:00', 1, 1),
 (9, 12, 'William', 'Blake', 'Male', 'william@gmail.com', '8683619153', 'Kumar', 800, '2020-03-26', '12:00:00', 1, 1),
-(9, 13, 'William', 'Blake', 'Male', 'william@gmail.com', '8683619153', 'Tiwary', 450, '2020-03-26', '14:00:00', 1, 1),
-(12, 14, 'tripti', 'kumari', 'Female', 'tp@gmail.com', '1234567890', 'yuki', 10000, '2023-01-07', '08:00:00', 1, 1);
+(9, 13, 'William', 'Blake', 'Male', 'william@gmail.com', '8683619153', 'Tiwary', 450, '2020-03-26', '14:00:00', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -106,8 +105,7 @@ INSERT INTO `contact` (`name`, `email`, `contact`, `message`) VALUES
 ('Karthick', 'karthi@gmail.com', '9898989898', 'Good service'),
 ('Abbis', 'abbis@gmail.com', '8979776868', 'Love your service'),
 ('Asiq', 'asiq@gmail.com', '9087897564', 'Love your service. Thank you!'),
-('Jane', 'jane@gmail.com', '7869869757', 'I love your service!'),
-('Tp', 'sdgsdftvgsd@gdd.com', '0644550460', 'Good Doctors specially yuki will come again tomorow');
+('Jane', 'jane@gmail.com', '7869869757', 'I love your service!');
 
 -- --------------------------------------------------------
 
@@ -135,8 +133,7 @@ INSERT INTO `doctb` (`username`, `password`, `email`, `spec`, `docFees`) VALUES
 ('Kumar', 'kumar123', 'kumar@gmail.com', 'Pediatrician', 800),
 ('Amit', 'amit123', 'amit@gmail.com', 'Cardiologist', 1000),
 ('Abbis', 'abbis123', 'abbis@gmail.com', 'Neurologist', 1500),
-('Tiwary', 'tiwary123', 'tiwary@gmail.com', 'Pediatrician', 450),
-('yuki', 'yuki123', 'blabla@gmail.com', 'General', 10000);
+('Tiwary', 'tiwary123', 'tiwary@gmail.com', 'Pediatrician', 450);
 
 -- --------------------------------------------------------
 
@@ -162,7 +159,6 @@ CREATE TABLE `patreg` (
 --
 
 INSERT INTO `patreg` (`pid`, `fname`, `lname`, `gender`, `email`, `contact`, `password`, `cpassword`, `srank`, `sdept`) VALUES
-(16, 'Yuki', '', 'Male', 'yuki111@gmail.com', '1111111111', 'yuki123', 'yuki123', 'Trainee', 'Army'),
 (17, 'Tripti', 'Kumari', 'Female', 'tp@gmail.com', 'tp@gmail.c', 'tripti123', 'tripti123', 'General', 'Army');
 
 -- --------------------------------------------------------
@@ -192,8 +188,7 @@ INSERT INTO `prestb` (`doctor`, `pid`, `ID`, `fname`, `lname`, `appdate`, `appti
 ('Dinesh', 4, 11, 'Kishan', 'Lal', '2020-03-27', '15:00:00', 'Cough', 'Nothing', 'Just take a teaspoon of Benadryl every night'),
 ('Ganesh', 2, 8, 'Alia', 'Bhatt', '2020-03-21', '10:00:00', 'Severe Fever', 'Nothing', 'Take bed rest'),
 ('Kumar', 9, 12, 'William', 'Blake', '2020-03-26', '12:00:00', 'Sever fever', 'nothing', 'Paracetamol -> 1 every morning and night'),
-('Tiwary', 9, 13, 'William', 'Blake', '2020-03-26', '14:00:00', 'Cough', 'Skin dryness', 'Intake fruits with more water content'),
-('yuki', 12, 14, 'tripti', 'kumari', '2023-01-07', '08:00:00', 'Too Cute', 'Me', 'PGL, Sleep eat');
+('Tiwary', 9, 13, 'William', 'Blake', '2020-03-26', '14:00:00', 'Cough', 'Skin dryness', 'Intake fruits with more water content');
 
 --
 -- Indexes for dumped tables
